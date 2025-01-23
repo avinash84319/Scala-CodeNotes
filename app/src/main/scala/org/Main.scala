@@ -40,6 +40,8 @@ object Main {
     df.dropDuplicates().show()
     //sorting rows
     df.orderBy("HomeTeam").show()
+    //sorting rows in descending order
+    df.groupBy("Division").count().alias("Count").sort(col("Count").desc).show()
     //limiting rows
     df.limit(5).show()
     //adding rows to the dataframe
@@ -87,9 +89,32 @@ object Main {
     //applying user defined functions
     val addOne = org.apache.spark.sql.functions.udf((x:Int) => x+1)
 
+    // values for column
+
+    //min value
+    df.select(org.apache.spark.sql.functions.min("FTHome")).show()
+    //max value
+    df.select(org.apache.spark.sql.functions.max("FTHome")).show()
+    //mean value
+    df.select(org.apache.spark.sql.functions.mean("FTHome")).show()
+    //sum value
+    df.select(org.apache.spark.sql.functions.sum("FTHome")).show()
+
+    // average of two columns
+    df.select(avg(col("FTHome")+col("FTAway"))).show()
+
+    //collecting data into scala variable
+    val data = df.collect()
+    val data = df.select(max("FTHome")).collect()(0).getAs[String](0)
+
     //dividing the data into 2 partitions to practice joins
     val df1 = df.limit(10)
     val df2 = df.limit(10)
+
+    //date based operations
+    df.withColumn("Year",year($"MatchDate")).filter("Year =='2000'").groupBy("HomeTeam").count().show()
+    val maxDate = df.select(max("MatchDate")).collect()(0).getAs[String](0)
+    
 
     //join df1 and df2
     df1.join(df2,df1("HomeTeam") === df2("HomeTeam")).show()
@@ -105,6 +130,11 @@ object Main {
 
     //cross join
     df1.crossJoin(df2).show()
+
+    //differnce in two dfs
+    df1.exceptAll(df2).show()
+
+
 
     spark.stop()
 
