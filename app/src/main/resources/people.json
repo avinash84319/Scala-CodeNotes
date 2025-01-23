@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "name": "Alice",
+      "age": 34,
+      "department": "Engineering",
+      "salary": 90000,
+      "department_id": 1
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "age": 45,
+      "department": "Marketing",
+      "salary": 75000,
+      "department_id": 2
+    },
+    {
+      "id": 3,
+      "name": "Charlie",
+      "age": 29,
+      "department": "Engineering",
+      "salary": 95000,
+      "department_id": 1
+    },
+    {
+      "id": 4,
+      "name": "David",
+      "age": 38,
+      "department": "Sales",
+      "salary": 80000,
+      "department_id": 3
+    },
+    {
+      "id": 5,
+      "name": "Eva",
+      "age": 40,
+      "department": "Sales",
+      "salary": 70000,
+      "department_id": 3
+    },
+    {
+      "id": 6,
+      "name": "Frank",
+      "age": 28,
+      "department": "Marketing",
+      "salary": 70000,
+      "department_id": 2
+    }
+  ]
