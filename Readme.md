@@ -19,7 +19,7 @@ for Scala version 2.13.8
 
 ## Scala OOPs
 
-- [Traits, Abstract Classes, Case Classes](Scala_DS_Examples/oops.scala)
+- [Traits, Abstract Classes, Case Classes](Scala_Oops_Examples/oops.scala)
 
 ## Spark with Scala
 
@@ -31,4 +31,9 @@ for Spark version 3.5.4 and Scala version 2.13.8
 - [Repartitionvscoalesce](app/src/main/scala/org/RepartionvsColalace.scala)
 - [Joins](app/src/main/scala/org/Joins.scala)
 - [JoinStratergies](app/src/main/scala/org/SpecialJoins.scala)
+
+## Scala Spark Example Tasks
+
+- [Joining](Scala_Spark_Examples/joinTask.scala)
+- [Missing Dates](Scala_Spark_Examples/MissingDates.scala)
 
