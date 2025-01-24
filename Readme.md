@@ -32,6 +32,10 @@ for Spark version 3.5.4 and Scala version 2.13.8
 - [Joins](app/src/main/scala/org/Joins.scala)
 - [JoinStratergies](app/src/main/scala/org/SpecialJoins.scala)
 
+## Spark Optimizations
+
+- [Optimizations](Scala_Spark_Examples/Optimizations.md)
+
 ## Scala Spark Example Tasks
 
 - [Joining](Scala_Spark_Examples/joinTask.scala)
