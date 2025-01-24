@@ -4,6 +4,8 @@ In this repository I have stored all the sample code for  scala and resources fo
 
 for Scala version 2.13.8
 
+## Scala DS Basics
+
 - [HelloWorld]("Scala_DS_Examples/HelloWorld.scala")
 - [Inputs]("Scala_DS_Examples/Inputs.txt")
 - [ObjectOriented](Scala_DS_Examples/ObjectOriented.txt)
@@ -14,6 +16,10 @@ for Scala version 2.13.8
 - [Maps](Scala_DS_Examples/Maps.txt)
 - [Arrays](Scala_DS_Examples/Arrays.txt)
 - [Tuples](Scala_DS_Examples/Tuples.txt)
+
+## Scala OOPs
+
+- [Traits, Abstract Classes, Case Classes](Scala_DS_Examples/oops.scala)
 
 ## Spark with Scala
 
