@@ -1,0 +1,48 @@
+// 1. Create a tuple with three elements and access the second element
+val tuple1 = (1, "Scala", 3.14)
+println(tuple1._2)  // Access second element
+
+// 2. Check if a tuple is empty
+val tuple2 = (1, 2, 3)
+println(tuple2.productArity == 0)  // False if tuple is not empty
+
+// 3. Create a tuple with the square of numbers from 1 to 6
+val tuple3 = (1, 4, 9, 16, 25, 36)
+println(tuple3)  // Tuple with squares
+
+// 4. Create a tuple from two lists
+val list1 = List(1, 2, 3)
+val list2 = List("a", "b", "c")
+val tuple4 = (list1, list2)
+println(tuple4)  // Tuple from two lists
+
+// 5. Swap the elements of a tuple
+val tuple5 = (100, 200)
+val swapped = (tuple5._2, tuple5._1)
+println(swapped)  // Swapped tuple: (200, 100)
+
+// 6. Concatenate two tuples
+val tuple6 = (200, "Scala")
+val tuple7 = (300, "Exercises")
+val concatenated = (tuple6._2 + " " + tuple7._2, tuple6._1 + tuple7._1)
+println(concatenated)  // ("Scala Exercises", 500)
+
+// 7. Check if a tuple contains a specific element
+val tuple8 = (1, 2, 3, 4)
+println(tuple8.productIterator.contains(3))  // True if 3 is present
+
+// 8. Merge two tuples into a single tuple
+val tuple9 = (1, "Apple")
+val tuple10 = (2, "Banana")
+val merged = (tuple9._1, tuple9._2, tuple10._1, tuple10._2)
+println(merged)  // Merged tuple: (1, "Apple", 2, "Banana")
+
+// 9. Find distinct elements in a tuple
+val tuple11 = (1, 2, 3, 3, 2, 1)
+val distinctElements = tuple11.productIterator.toSet
+println(distinctElements)  // Set of distinct elements: Set(1, 2, 3)
+
+// 10. Check if two tuples are equal
+val tuple12 = (1, "Scala")
+val tuple13 = (1, "Scala")
+println(tuple12 == tuple13)  // True if tuples are equal

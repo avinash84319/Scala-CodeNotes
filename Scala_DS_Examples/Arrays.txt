@@ -1,0 +1,205 @@
+// 1. Sum values of a given array
+val arr1 = Array(1, 2, 3, 4, 5)
+println(arr1.sum)  // Output: 15
+
+// 2. Check if a number is present at first or last position of an array
+val arr2 = Array(10, 20, 30)
+val num = 10
+println(arr2.head == num || arr2.last == num)  // Output: true
+
+// 3. Calculate the average of an array
+val arr3 = Array(1, 2, 3, 4, 5)
+println(arr3.sum / arr3.length)  // Output: 3
+
+// 4. Check if first or last element are same in an array
+val arr4 = Array(1, 2, 3, 1)
+println(arr4.head == arr4.last)  // Output: true
+
+// 5. Find index of an element in an array
+val arr5 = Array(10, 20, 30)
+val index = arr5.indexOf(20)
+println(index)  // Output: 1
+
+// 6. Check if first or last element of two arrays are same
+val arr6 = Array(1, 2)
+val arr7 = Array(1, 3)
+println(arr6.head == arr7.head || arr6.last == arr7.last)  // Output: true
+
+// 7. Remove a specific element from an array
+val arr8 = Array(1, 2, 3, 4)
+val result = arr8.filter(_ != 3)
+println(result.mkString(", "))  // Output: 1, 2, 4
+
+// 8. Rotate one element left of an array
+val arr9 = Array(1, 2, 3, 4)
+val rotated = arr9.tail :+ arr9.head
+println(rotated.mkString(", "))  // Output: 2, 3, 4, 1
+
+// 9. Find the maximum and minimum value in an array
+val arr10 = Array(3, 5, 1, 7, 2)
+println(arr10.min)  // Output: 1
+println(arr10.max)  // Output: 7
+
+// 10. Sum of the last 3 elements in an array
+val arr11 = Array(1, 2, 3, 4, 5)
+val sumLast3 = if (arr11.length < 3) arr11.sum else arr11.takeRight(3).sum
+println(sumLast3)  // Output: 12
+
+// 11. Create a new array taking the middle element from three arrays
+val arr12 = Array(1, 2, 3, 4, 5)
+val arr13 = Array(6, 7, 8, 9, 10)
+val arr14 = Array(11, 12, 13, 14, 15)
+val middle = Array(arr12(2), arr13(2), arr14(2))
+println(middle.mkString(", "))  // Output: 3, 8, 13
+
+// 12. Reverse an array
+val arr15 = Array(1, 2, 3, 4)
+println(arr15.reverse.mkString(", "))  // Output: 4, 3, 2, 1
+
+// 13. Check if 4 or 7 is present in an array
+val arr16 = Array(1, 2, 3, 4)
+println(arr16.contains(4) || arr16.contains(7))  // Output: true
+
+// 14. Find the maximum value from first, middle, and last elements
+val arr17 = Array(10, 20, 30, 40, 50)
+val maxValue = Seq(arr17.head, arr17(arr17.length / 2), arr17.last).max
+println(maxValue)  // Output: 40
+
+// 15. Find common elements between two arrays of integers
+val arr18 = Array(1, 2, 3, 4)
+val arr19 = Array(3, 4, 5, 6)
+val common = arr18 intersect arr19
+println(common.mkString(", "))  // Output: 3, 4
+
+// 16. Find common elements between two arrays of strings
+val arr20 = Array("a", "b", "c")
+val arr21 = Array("b", "c", "d")
+val commonStr = arr20 intersect arr21
+println(commonStr.mkString(", "))  // Output: b, c
+
+// 17. Remove duplicate elements from an array of strings
+val arr22 = Array("a", "b", "a", "c", "b")
+val distinctStr = arr22.distinct
+println(distinctStr.mkString(", "))  // Output: a, b, c
+
+// 18. Remove duplicate elements from an array of integers
+val arr23 = Array(1, 2, 2, 3, 3, 4)
+val distinctInt = arr23.distinct
+println(distinctInt.mkString(", "))  // Output: 1, 2, 3, 4
+
+// 19. Find the second largest element from an array
+val arr24 = Array(10, 20, 30, 40)
+val secondLargest = arr24.sorted.reverse(1)
+println(secondLargest)  // Output: 30
+
+// 20. Find the second smallest element from an array
+val arr25 = Array(10, 20, 30, 40)
+val secondSmallest = arr25.sorted(1)
+println(secondSmallest)  // Output: 20
+
+// 21. Test equality of two arrays
+val arr26 = Array(1, 2, 3)
+val arr27 = Array(1, 2, 3)
+println(arr26 sameElements arr27)  // Output: true
+
+// 22. Find a missing number in an array
+val arr28 = Array(1, 2, 4)
+val missing = (1 to 4).diff(arr28).head
+println(missing)  // Output: 3
+
+// 23. Count even and odd integers in an array
+val arr29 = Array(1, 2, 3, 4, 5)
+val (evenCount, oddCount) = arr29.partition(_ % 2 == 0)
+println(s"Even: ${evenCount.length}, Odd: ${oddCount.length}")  // Output: Even: 2, Odd: 3
+
+// 24. Get the difference between the largest and smallest values
+val arr30 = Array(1, 2, 3, 4, 5)
+println(arr30.max - arr30.min)  // Output: 4
+
+// 25. Compute the average value except the largest and smallest
+val arr31 = Array(1, 2, 3, 4, 5)
+val filteredAvg = arr31.filter(x => x != arr31.min && x != arr31.max).sum / (arr31.length - 2)
+println(filteredAvg)  // Output: 3
+
+// 26. Remove duplicate elements from a sorted array and return the new length
+val arr32 = Array(1, 1, 2, 2, 3, 3)
+val distinctSorted = arr32.distinct
+println(distinctSorted.length)  // Output: 3
+
+// 27. Find smallest and second smallest elements
+val arr33 = Array(10, 20, 30, 40)
+val sortedArr33 = arr33.sorted
+println(s"Smallest: ${sortedArr33(0)}, Second smallest: ${sortedArr33(1)}")  // Output: Smallest: 10, Second smallest: 20
+
+// 28. Segregate 0s on left and 1s on right side of an array
+val arr34 = Array(1, 0, 1, 0, 1, 0)
+val segregated = arr34.sortWith(_ == 0)
+println(segregated.mkString(", "))  // Output: 0, 0, 0, 1, 1, 1
+
+// 29. Find two elements whose sum is closest to zero
+val arr35 = Array(1, -1, 2, -3, 4)
+val closestToZero = arr35.combinations(2).minBy(pair => Math.abs(pair.sum))
+println(closestToZero.mkString(", "))  // Output: 1, -1
+
+// 30. Find all combinations of four elements whose sum is equal to a given value
+val arr36 = Array(1, 2, 3, 4, 5, 6)
+val target = 10
+val combinations = arr36.combinations(4).filter(_.sum == target)
+combinations.foreach(println)
+
+// 31. Count possible triangles from an unsorted array
+val arr37 = Array(10, 21, 22, 100, 101)
+val triangles = arr37.combinations(3).count { case Array(a, b, c) =>
+  a + b > c && b + c > a && a + c > b
+}
+println(triangles)  // Output: 1
+
+// 32. Arrange positive integers before negative integers
+val arr38 = Array(1, -2, 3, -4)
+val arranged = arr38.sortWith(_ > 0)
+println(arranged.mkString(", "))  // Output: 1, 3, -2, -4
+
+// 33. Separate even and odd numbers
+val arr39 = Array(1, 2, 3, 4, 5, 6)
+val (evens, odds) = arr39.partition(_ % 2 == 0)
+println(evens.mkString(", ") + " " + odds.mkString(", "))  // Output: 2, 4, 6 1, 3, 5
+
+// 34. Replace every element with the next greatest element
+val arr40 = Array(1, 2, 3, 4, 5)
+val nextGreater = arr40.zipWithIndex.map { case (x, i) =>
+  if (i == arr40.length - 1) -1 else arr40(i + 1)
+}
+println(nextGreater.mkString(", "))  // Output: 2, 3, 4, 5, -1
+
+// 35. Find all pairs whose sum equals a given number
+val arr41 = Array(1, 2, 3, 4, 5)
+val targetSum = 5
+val pairs = arr41.combinations(2).filter(_.sum == targetSum)
+pairs.foreach(println)
+
+// 36. Find maximum product of two integers in an array
+val arr42 = Array(2, 3, 5, 7, -7, 5, 8, -5)
+val maxProductPair = arr42.combinations(2).maxBy(pair => pair.product)
+println(s"Pair is (${maxProductPair.mkString(", ")}), Maximum Product: ${maxProductPair.product}")
+
+// 37. Rearrange array such that every second element is greater
+val arr43 = Array(1, 2, 4, 9, 5, 3, 8, 7, 10, 12, 14)
+val rearranged = arr43.sorted.zipWithIndex.map {
+  case (x, i) => if (i % 2 == 1) x else -x
+}
+println(rearranged.mkString(", "))
+
+// 38. Find the maximum difference between two elements
+val arr44 = Array(2, 3, 1, 7, 9, 5, 11, 3, 5)
+val maxDiff = (arr44.max - arr44.min)
+println(maxDiff)  // Output: 10
+
+// 39. Find largest sum subarray
+val arr45 = Array(1, 2, -3, -4, 0, 6, 7, 8, 9)
+val maxSum = arr45.sliding(3).map(_.sum).max
+println(maxSum)  // Output: 30
+
+// 40. Find minimum sum of sub-array of size 4
+val arr46 = Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+val minSum = arr46.sliding(4).map(_.sum).min
+println(minSum)  // Output: 10

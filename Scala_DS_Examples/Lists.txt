@@ -1,0 +1,86 @@
+// 1. Create a list in different ways
+val lispStyle = List(1, 2, 3)
+val javaStyle = List.apply(1, 2, 3)
+val rangeList = (1 to 5).toList
+val uniformList = List.fill(5)(10)
+val tabulateList = List.tabulate(5)(i => i * 2)
+
+// 2. Add single and multiple elements to a list
+import scala.collection.mutable.ListBuffer
+val listBuffer = ListBuffer(1, 2, 3)
+listBuffer += 4
+listBuffer ++= List(5, 6)
+
+// 3. Remove single and multiple elements from a list
+val listBuffer2 = ListBuffer(1, 2, 3, 4, 5)
+listBuffer2 -= 3
+listBuffer2 --= List(4, 5)
+
+// 4. Delete element(s) from a List
+val list = List(1, 2, 3, 4, 5)
+val newList = list.filterNot(_ == 3)
+
+// 5. Iterate over a list to print elements and calculate sum and product
+val sum = list.sum
+val product = list.product
+list.foreach(println)
+
+// 6. Find the largest and smallest number from a list
+val largest = list.max
+val smallest = list.min
+
+// 7. Remove duplicates from a list
+val uniqueList = list.distinct
+
+// 8. Check if a list is empty
+val isEmpty = list.isEmpty
+
+// 9. Get the difference between two lists
+val diffList = list.diff(List(1, 2))
+
+// 10. Find the first and last element of a list
+val first = list.head
+val last = list.last
+
+// 11. Find the index of an element in a list
+val index = list.indexOf(3)
+
+// 12. Merge (concatenate) two lists
+val mergedList = list ++ List(6, 7)
+
+// 13. Find even and odd numbers from a list
+val (evens, odds) = list.partition(_ % 2 == 0)
+
+// 14. Find the nth element of a list
+val nthElement = if (list.length > 2) Some(list(2)) else None
+
+// 15. Find an element from the last position of a list
+val lastElement = list.lastOption
+
+// 16. Reverse a given list
+val reversedList = list.reverse
+
+// 17. Check if a list is a palindrome
+val isPalindrome = list == list.reverse
+
+// 18. Flatten a List of Lists
+val listOfLists = List(List(1, 2), List(3, 4))
+val flattenedList = listOfLists.flatten
+
+// 19. Triplicate each element in the list
+val triplicatedList = list.flatMap(x => List(x, x, x))
+
+// 20. Add each element n times to a list
+val nTimesList = list.flatMap(List.fill(3)(_))
+
+// 21. Check whether a list contains a sublist
+val containsSublist = list.containsSlice(List(2, 3))
+
+// 22. Count the number of occurrences of each element in a list
+val occurrences = list.groupBy(identity).view.mapValues(_.size).toMap
+
+// 23. Split a given list into two lists
+val (firstPart, secondPart) = list.splitAt(3)
+
+// 24. Calculate the length of a given list
+val length = list.length

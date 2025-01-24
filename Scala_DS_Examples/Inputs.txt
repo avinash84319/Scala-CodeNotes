@@ -1,0 +1,103 @@
+In Scala, taking input from the user is typically done using the scala.io.StdIn object. This object provides methods to read input from the console, such as readLine() for strings, readInt() for integers, and so on.
+Here's a detailed explanation:
+
+Reading Input in Scala
+1. Reading a String
+The simplest way to take input is using readLine():
+
+import scala.io.StdIn
+object InputExample {
+  def main(args: Array[String]): Unit = {
+    println("Enter your name:")
+    val name = StdIn.readLine() // Reads a line of input as a string
+    println(s"Hello, $name!")
+  }
+}
+Explanation:
+	• StdIn.readLine(): Reads a line of input from the console as a string.
+	• println(s"..."): String interpolation is used to include the variable name in the output.
+
+2. Reading an Integer
+To read an integer, use readInt():
+
+import scala.io.StdIn
+object InputExample {
+  def main(args: Array[String]): Unit = {
+    println("Enter your age:")
+    val age = StdIn.readInt() // Reads an integer
+    println(s"You are $age years old.")
+  }
+}
+Note: If the user enters a non-integer value, it will throw a NumberFormatException. You can handle this with error handling (see below).
+
+3. Reading a Double (Floating-Point Number)
+To read a decimal number, use readDouble():
+
+import scala.io.StdIn
+object InputExample {
+  def main(args: Array[String]): Unit = {
+    println("Enter your height in meters:")
+    val height = StdIn.readDouble() // Reads a double
+    println(s"Your height is $height meters.")
+  }
+}
+
+4. Reading Multiple Values
+You can split user input into multiple values:
+
+import scala.io.StdIn
+object InputExample {
+  def main(args: Array[String]): Unit = {
+    println("Enter your name and age (separated by a space):")
+    val input = StdIn.readLine() // Reads input as a single string
+    val Array(name, age) = input.split(" ") // Splits the input into an array
+    println(s"Name: $name, Age: $age")
+  }
+}
+Explanation:
+	• split(" "): Splits the input string based on spaces.
+	• Array(name, age): Extracts the split values into variables.
+
+5. Handling Exceptions
+To make input handling robust, you can use try-catch blocks to handle invalid inputs:
+
+import scala.io.StdIn
+object InputExample {
+  def main(args: Array[String]): Unit = {
+    try {
+      println("Enter a number:")
+      val number = StdIn.readInt() // Attempts to read an integer
+      println(s"You entered: $number")
+    } catch {
+      case e: NumberFormatException =>
+        println("Invalid input! Please enter a valid number.")
+    }
+  }
+}
+
+6. Reading a List of Numbers
+You can process a list of numbers entered on a single line:
+
+import scala.io.StdIn
+object InputExample {
+  def main(args: Array[String]): Unit = {
+    println("Enter a list of numbers separated by spaces:")
+    val numbers = StdIn.readLine() // Read the input as a string
+      .split(" ")                  // Split the string into parts
+      .map(_.toInt)                // Convert each part to an integer
+    println(s"You entered: ${numbers.mkString(", ")}")
+  }
+}
+
+Comparison with Python
+Here’s how the above examples compare with Python:
+Task	Scala Example	Python Example
+Read a string	StdIn.readLine()	input()
+Read an integer	StdIn.readInt()	int(input())
+Read a float	StdIn.readDouble()	float(input())
+Split input into parts	input.split(" ").map(_.toInt)	list(map(int, input().split()))
+
+Conclusion
+	• Use StdIn.readLine() for general input, and other methods like readInt() or readDouble() for specific types.
+	• Handle exceptions when reading input to manage invalid data gracefully.
+	• For multiple inputs, split the input string and process it as needed.

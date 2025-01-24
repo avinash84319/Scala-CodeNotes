@@ -1,0 +1,59 @@
+// 1. Create an empty map and add key-value pairs to it
+var map = Map[Int, String](); map += (1 -> "One"); map += (2 -> "Two"); println(map)
+
+// 2. Check if a map is empty or not
+println(Map().isEmpty)
+
+// 3. Find the size of a map
+println(Map(1 -> "One", 2 -> "Two").size)
+
+// 4. Retrieve the value associated with a given key
+println(Map(1 -> "One", 2 -> "Two").getOrElse(1, "Not Found"))
+
+// 5. Update the value associated with a given key
+var map2 = Map(1 -> "One"); map2 += (1 -> "Updated"); println(map2)
+
+// 6. Remove a key-value pair from a map
+var map3 = Map(1 -> "One", 2 -> "Two"); map3 -= 2; println(map3)
+
+// 7. Iterate over key-value pairs in a map
+Map(1 -> "One", 2 -> "Two").foreach { case (k, v) => println(s"Key: $k, Value: $v") }
+
+// 8. Check if a map contains a specific key
+println(Map(1 -> "One", 2 -> "Two").contains(1))
+
+// 9. Check if a map contains a specific value
+println(Map(1 -> "One", 2 -> "Two").values.exists(_ == "One"))
+
+// 10. Find the minimum value in a map
+println(Map(1 -> 100, 2 -> 50, 3 -> 200).minBy(_._2)._2)
+
+// 11. Find the maximum value in a map
+println(Map(1 -> 100, 2 -> 50, 3 -> 200).maxBy(_._2)._2)
+
+// 12. Find the sum of all values in a map
+println(Map(1 -> 100, 2 -> 50, 3 -> 200).values.sum)
+
+// 13. Find the average of all values in a map
+val m = Map(1 -> 100, 2 -> 50, 3 -> 200); println(m.values.sum.toDouble / m.size)
+
+// 14. Find the keys with the maximum value
+println(Map(1 -> 100, 2 -> 50, 3 -> 200).filter(_._2 == Map(1 -> 100, 2 -> 50, 3 -> 200).values.max).keys)
+
+// 15. Find the keys with the minimum value
+println(Map(1 -> 100, 2 -> 50, 3 -> 200).filter(_._2 == Map(1 -> 100, 2 -> 50, 3 -> 200).values.min).keys)
+
+// 16. Sort the map by keys in ascending order
+println(Map(3 -> "Three", 1 -> "One", 2 -> "Two").toSeq.sortBy(_._1).toMap)
+
+// 17. Sort the map by values in ascending order
+println(Map(3 -> "Three", 1 -> "One", 2 -> "Two").toSeq.sortBy(_._2).toMap)
+
+// 18. Find the common keys between two maps
+println(Map(1 -> "One", 2 -> "Two").keySet.intersect(Map(2 -> "Two", 3 -> "Three").keySet))
+
+// 19. Merge two maps
+println(Map(1 -> "One", 2 -> "Two") ++ Map(2 -> "Updated", 3 -> "Three"))
+
+// 20. Find the difference between two maps
+println(Map(1 -> "One", 2 -> "Two") -- Map(2 -> "Two").keys)

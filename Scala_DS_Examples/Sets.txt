@@ -1,0 +1,53 @@
+// 1. Create empty set and add elements
+var set = Set[Int](); set += 1; set += 2; println(set)
+
+// 2. Find union of two sets
+println(Set(1, 2) union Set(2, 3))
+
+// 3. Find intersection of two sets
+println(Set(1, 2) intersect Set(2, 3))
+
+// 4. Find difference between two sets
+println(Set(1, 2) diff Set(2, 3))
+
+// 5. Check if set is empty
+println(Set().isEmpty)
+
+// 6. Check if element exists in set
+println(Set(1, 2, 3).contains(2))
+
+// 7. Remove element from set
+var set2 = Set(1, 2, 3); set2 -= 2; println(set2)
+
+// 8. Find size of a set
+println(Set(1, 2, 3).size)
+
+// 9. Convert set to list
+println(Set(1, 2, 3).toList)
+
+// 10. Check if a set is subset of another
+println(Set(1, 2).subsetOf(Set(1, 2, 3)))
+
+// 11. Check if set is superset of another
+println(Set(1, 2, 3).supersetOf(Set(1, 2)))
+
+// 12. Check if two sets are disjoint
+println(Set(1, 2).intersect(Set(3, 4)).isEmpty)
+
+// 13. Find maximum element in set
+println(Set(1, 2, 3).max)
+ 
+// 14. Find minimum element in set
+println(Set(1, 2, 3).min)
+
+// 15. Find sum of all elements in set
+println(Set(1, 2, 3).sum)
+
+// 16. Find average of all elements in set
+println(Set(1, 2, 3).sum.toDouble / Set(1, 2, 3).size)
+
+// 17. Find second largest element in set
+println(Set(1, 2, 3).toList.sorted.reverse(1))
+
+// 18. Find common elements between two sets
+println(Set(1, 2, 3) intersect Set(3, 4, 5))
