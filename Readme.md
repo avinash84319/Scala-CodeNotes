@@ -4,6 +4,9 @@ In this repository I have stored all the sample code for  scala and resources fo
 
 for Scala version 2.13.8
 
+## Setup
+- [setup](Setup.md)
+
 ## Scala DS Basics
 
 - [HelloWorld]("Scala_DS_Examples/HelloWorld.scala")
